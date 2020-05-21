@@ -1,0 +1,19 @@
+{{ define "login/login.html" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://localhost:8080/api/auth/login" method="post" enctype="application/x-www-form-urlencoded">
+        用户名<input type="text" name="username"><br>
+        密码<input type="password" name="password"><br>
+        <img src="http://localhost:8080/api/auth/captcha"  onclick="this.src='/api/auth/captcha?v='+Math.random()" alt=""><br>
+        验证码：<input type="text" name="captcha">
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
+{{ end }}
